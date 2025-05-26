@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG" />
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG" />
+  <meta property="og:url" content="URL OF THE WEBSITE" />
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>DanceTogether</title>
+  <link rel="icon" type="image/x-icon" href="static/images/logo.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+
+  
+  
+  <style>
+    #video_gallery_1, #video_gallery_2 {
+      display: flex;
+      flex-direction: column;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+      box-sizing: border-box;
+    }
+    
+    #video_gallery_1 .video_wrapper,
+    #video_gallery_2 .video_wrapper {
+      width: 100%;
+      margin: 0 0 1.25rem 0;
+    }
+    
+    #video_gallery_1 video,
+    #video_gallery_2 video {
+      width: 100%;
+      height: auto;
+    }
+    
+    @media (min-width: 1920px) {
+      #video_gallery_1 .video_wrapper {
+        max-width: 1600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+    
+    @media (min-width: 1920px) {
+      #video_gallery_2 .video_wrapper {
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+    
+    #video_gallery_2 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      padding: 2rem 3rem;
+      margin: 0 auto;
+      max-width: 1400px;
+      box-sizing: border-box;
+    }
+    
+    #video_gallery_2 .video_wrapper {
+      margin: 0;
+      width: 100%;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      padding-bottom: 1rem;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+      overflow: hidden;
+    }
+    
+    #video_gallery_2 video {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      display: block;
+    }
+    
+    @media (max-width: 768px) {
+      #video_gallery_2 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        padding: 1rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      #video_gallery_2 {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .publication-authors {
+      margin-bottom: 1rem;
+    }
+    
+
+    .author-block {
+        margin-right: 8px;
+        color: #000;
+    }
+    
+    .author-block a {
+        text-decoration: none;
+        color: #000 !important;
+        font-weight: bold;
+    }
+    
+    .author-block a:hover {
+        text-decoration: underline;
+        color: #000 !important;
+    }
+    
+    .author-block a:visited {
+        color: #000 !important;
+    }
+    
+    .author-block a:link {
+        color: #000 !important;
+    }
+    
+    .affiliation-block {
+      font-size: 0.9em;
+      color: #666;
+      margin-top: 0.5rem;
+    }
+    
+    .eql-cntrb {
+      font-size: 0.85em;
+      color: #888;
+      margin-top: 0.5rem;
+    }
+  </style>
+        
+
+
+</head>
+
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">
+              <img
+                src="static/images/logo.png"
+                alt="DanceTogether logo"
+                style="
+                  height: 1em;            /* 与当前字体行高一致 */
+                  vertical-align: -0.15em;/* 微调基线，让图标垂直居中 */
+                  margin-right: 0.3em;    /* 图标与文本间留点空隙 */
+                ">
+              <span class="rainbow-text">DanceTogether!</span> Identity-Preserving Multi-Person Interactive Video Generation
+            </h1>
+
+            
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                  <a href="https://scholar.google.com/citations?hl=en&user=uVMnzPMAAAAJ" target="_blank">
+                      <strong>Junhao Chen</strong>
+                  </a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                  <strong>Mingjin Chen</strong><sup>2</sup>,
+              </span>
+              <span class="author-block">
+                  <a href="https://scholar.google.com/citations?hl=en&user=mTV0usAAAAAJ" target="_blank">
+                      <strong>Jianjin Xu</strong>
+                  </a><sup>3</sup>,
+              </span>
+              <span class="author-block">
+                  <a href="https://scholar.google.com/citations?user=_wyYvQsAAAAJ&hl=en&oi=sra" target="_blank">
+                      <strong>Xiang Li</strong>
+                  </a><sup>4</sup>,
+              </span>
+              <span class="author-block">
+                  <a href="https://scholar.google.com/citations?user=dEzL5pAAAAAJ&hl=en" target="_blank">
+                      <strong>Junting Dong</strong>
+                  </a><sup>5†</sup>,
+              </span><br>
+              <span class="author-block">
+                  <a href="https://scholar.google.com/citations?user=TTW2mVoAAAAJ&hl=en" target="_blank">
+                      <strong>Mingze Sun</strong>
+                  </a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                  <a href="https://scholar.google.com/citations?user=E-k3WcgAAAAJ&hl=en" target="_blank">
+                      <strong>Puhua Jiang</strong>
+                  </a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                  <a href="https://scholar.google.com/citations?user=U4AwycUAAAAJ&hl=en&oi=ao" target="_blank">
+                      <strong>Hongxiang Li</strong>
+                  </a><sup>4</sup>,
+              </span>
+              <span class="author-block">
+                  <a href="https://scholar.google.com/citations?hl=en&user=x3aClGEAAAAJ" target="_blank">
+                      <strong>Yuhang Yang</strong>
+                  </a><sup>6</sup>,
+              </span><br>
+              <span class="author-block">
+                  <a href="https://scholar.google.com/citations?user=ygQznUQAAAAJ&hl=en" target="_blank">
+                      <strong>Hao Zhao</strong>
+                  </a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                  <a href="https://scholar.google.com/citations?hl=en&user=W3G5kZEAAAAJ" target="_blank">
+                      <strong>Xiaoxiao Long</strong>
+                  </a><sup>7</sup>,
+              </span>
+              <span class="author-block">
+                  <a href="https://scholar.google.com/citations?user=cgRY63gAAAAJ&hl=en" target="_blank">
+                      <strong>Ruqi Huang</strong>
+                  </a><sup>1†</sup>
+              </span>
+          </div>
+
+            <div class="is-size-6 affiliation-block">
+              <span class="author-block"><sup>1</sup>Tsinghua University</span>
+              <span class="author-block"><sup>2</sup>Beijing Normal–Hong Kong Baptist University</span>
+              <span class="author-block"><sup>3</sup>Carnegie Mellon University</span><br>
+              <span class="author-block"><sup>4</sup>Peking University</span>
+              <span class="author-block"><sup>5</sup>Shanghai AI Laboratory</span>
+              <span class="author-block"><sup>6</sup>University of Science & Technology of China</span>
+              <span class="author-block"><sup>7</sup>Nanjing University</span>
+            </div>
+
+            <div class="eql-cntrb">
+              <sup>†</sup>Corresponding Authors
+            </div>
+
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2505.18078.pdf" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+
+                <!-- <span class="link-block">
+                  <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Supplementary</span>
+                  </a>
+                </span> -->
+
+                <span class="link-block">
+                  <a href="https://github.com/yisuanwang/DanceTog" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2505.18078" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+<!-- 
+                <div class="col-sm-12" style="text-align: center;">
+                  <h3>Table of Contents</h3>
+                  <ul style="list-style-type: none; padding: 0;">
+                    <li><a href="#banner">Introductory Video</a></li>
+                    <li><a href="#abstract">Abstract</a></li>
+                    <li><a href="#video_gallery_1_title">Video Gallery 1</a></li>
+                    <li><a href="#video_gallery_2_title">Video Gallery 2</a></li>
+                    <li><a href="#text_supp">Textual Supplementary Material</a></li>
+                  </ul>
+                </div> -->
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Teaser video-->
+  <!-- <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <video poster="" id="banner" controls height="100%">
+          <source src="static/videos/banner_video.mp4" type="video/mp4">
+        </video>
+        <h2 class="subtitle has-text-centered">
+          A short introduction to DanceTogether.
+        </h2>
+      </div>
+    </div>
+  </section> -->
+  <!-- End teaser video -->
+
+  <!-- Paper abstract -->
+  <section class="section hero is-light" id="abstract">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Controllable video generation (CVG) has advanced rapidly, yet current systems falter when more than one actor must move, interact, and exchange positions under noisy control signals. We address this gap with DanceTogether, the first end-to-end diffusion framework that turns a single reference image plus independent pose-mask streams into long, photorealistic videos while strictly preserving every identity. A novel MaskPoseAdapter binds “who” and “how” at every denoising step by fusing robust tracking masks with semantically rich but noisy pose heat maps, eliminating the identity drift and appearance bleeding that plague frame-wise pipelines. To train and evaluate at scale, we introduce (i) PairFS-4K, 26 h of dual-skater footage with more than 7 000 distinct IDs, (ii) HumanRob-300, a one-hour humanoid-robot interaction set for rapid cross-domain transfer, and (iii) TogetherVideoBench, a three-track benchmark centred on the DanceTogEval-100 test suite covering dance, boxing, wrestling, yoga, and figure skating. On TogetherVideoBench, DanceTogether outperforms the prior arts by a significant margin. Moreover, we show that a one-hour fine-tune yields convincing human-robot videos, underscoring broad generalisation to embodied-AI and HRI tasks. Extensive ablations confirm that persistent identity-action binding is critical to these gains. Together, our model, datasets, and benchmark lift CVG from single-subject choreography to compositionally controllable, multi-actor interaction, opening new avenues for digital production, simulation, and embodied intelligence.
+              Our code, benchmark, and dataset will be released.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End paper abstract -->
+
+  <section clas="hero is-large" id="video_gallery_1_title">
+    <div class="container" style="width: 100vw;">
+      <br>
+      <h2 class="title is-3 has-text-centered">Video Gallery 1</h2>
+      <h4 class="subtitle has-text-centered">Examples from the DanceTogEval-100 Dataset</h4>
+      <p class="has-text-centered">Due to file size limitations, videos are compressed and quality might be affected. <br> The static image in the top-left corner is the reference image. Poses estimated from the GT video are used as inputs to each baseline.
+      </p>
+
+      <br>
+    </div>
+  </section>
+
+  <!-- －－－－－－ Video Gallery 1 －－－－－－ -->
+<div class="video_2" id="video_gallery_1" style="width:100%">
+  <div class="video_wrapper">
+    <div class="video_container">
+      <video autoplay muted loop controls>
+        <source src="static/videos/eval100/case01.mp4" type="video/mp4">
+      </video>
+      <p class="has-text-centered">case01</p>
+    </div>
+  </div>
+
+  <div class="video_wrapper">
+    <div class="video_container">
+      <video autoplay muted loop controls>
+        <source src="static/videos/eval100/case02.mp4" type="video/mp4">
+      </video>
+      <p class="has-text-centered">case02</p>
+    </div>
+  </div>
+
+  <div class="video_wrapper">
+    <div class="video_container">
+      <video autoplay muted loop controls>
+        <source src="static/videos/eval100/case03.mp4" type="video/mp4">
+      </video>
+      <p class="has-text-centered">case03</p>
+    </div>
+  </div>
+
+  <div class="video_wrapper">
+    <div class="video_container">
+      <video autoplay muted loop controls>
+        <source src="static/videos/eval100/case04.mp4" type="video/mp4">
+      </video>
+      <p class="has-text-centered">case04</p>
+    </div>
+  </div>
+
+  <div class="video_wrapper">
+    <div class="video_container">
+      <video autoplay muted loop controls>
+        <source src="static/videos/eval100/case05.mp4" type="video/mp4">
+      </video>
+      <p class="has-text-centered">case05</p>
+    </div>
+  </div>
+
+  <div class="video_wrapper">
+    <div class="video_container">
+      <video autoplay muted loop controls>
+        <source src="static/videos/eval100/case06.mp4" type="video/mp4">
+      </video>
+      <p class="has-text-centered">case06</p>
+    </div>
+  </div>
+
+  <div class="video_wrapper">
+    <div class="video_container">
+      <video autoplay muted loop controls>
+        <source src="static/videos/eval100/case07.mp4" type="video/mp4">
+      </video>
+      <p class="has-text-centered">case07</p>
+    </div>
+  </div>
+
+  <div class="video_wrapper">
+    <div class="video_container">
+      <video autoplay muted loop controls>
+        <source src="static/videos/eval100/case08.mp4" type="video/mp4">
+      </video>
+      <p class="has-text-centered">case08</p>
+    </div>
+  </div>
+
+  <div class="video_wrapper">
+    <div class="video_container">
+      <video autoplay muted loop controls>
+        <source src="static/videos/eval100/case09.mp4" type="video/mp4">
+      </video>
+      <p class="has-text-centered">case09</p>
+    </div>
+  </div>
+
+  <div class="video_wrapper">
+    <div class="video_container">
+      <video autoplay muted loop controls>
+        <source src="static/videos/eval100/case10.mp4" type="video/mp4">
+      </video>
+      <p class="has-text-centered">case10</p>
+    </div>
+  </div>
+
+  <div class="video_wrapper">
+    <div class="video_container">
+      <video autoplay muted loop controls>
+        <source src="static/videos/eval100/case11.mp4" type="video/mp4">
+      </video>
+      <p class="has-text-centered">case11</p>
+    </div>
+  </div>
+
+
+  <div class="video_wrapper">
+    <div class="video_container">
+      <video autoplay muted loop controls>
+        <source src="static/videos/eval100/case12.mp4" type="video/mp4">
+      </video>
+      <p class="has-text-centered">case12</p>
+    </div>
+  </div>
+
+  <div class="video_wrapper">
+    <div class="video_container">
+      <video autoplay muted loop controls>
+        <source src="static/videos/eval100/case13.mp4" type="video/mp4">
+      </video>
+      <p class="has-text-centered">case13</p>
+    </div>
+  </div>
+
+  <div class="video_wrapper">
+    <div class="video_container">
+      <video autoplay muted loop controls>
+        <source src="static/videos/eval100/case14.mp4" type="video/mp4">
+      </video>
+      <p class="has-text-centered">case14</p>
+    </div>
+  </div>
+
+  <div class="video_wrapper">
+    <div class="video_container">
+      <video autoplay muted loop controls>
+        <source src="static/videos/eval100/case15.mp4" type="video/mp4">
+      </video>
+      <p class="has-text-centered">case15</p>
+    </div>
+  </div>
+
+  <div class="video_wrapper">
+    <div class="video_container">
+      <video autoplay muted loop controls>
+        <source src="static/videos/eval100/case16.mp4" type="video/mp4">
+      </video>
+      <p class="has-text-centered">case16</p>
+    </div>
+  </div>
+
+  <div class="video_wrapper">
+    <div class="video_container">
+      <video autoplay muted loop controls>
+        <source src="static/videos/eval100/case17.mp4" type="video/mp4">
+      </video>
+      <p class="has-text-centered">case17</p>
+    </div>
+  </div>
+
+
+<!-- －－－－－－ End Video Gallery 1 －－－－－－ -->
+
+
+<section class="section hero is-light" id="video_gallery_2_title">
+  <div class="container" style="width: 100vw;">
+    <br>
+    <h2 class="title is-3 has-text-centered">Video Gallery 2</h2>
+    <h4 class="subtitle has-text-centered">Examples of Video Generation for Human-Humanoid Robot Interaction
+      (fine-tuned using HumanRob-300)</h4>
+    <p class="has-text-centered">Due to file size limitations, videos are compressed and quality might be affected.
+    </p>
+    <br>
+  </div>
+</section>
+
+<div class="video_2" id="video_gallery_2" style="width: 100%">
+  <div class="video_wrapper">
+    <div class="video_container">
+    <video autoplay muted loop controls>
+      <source src="static/videos/Rob_inter/01.mp4" type="video/mp4">
+    </video>
+    </div>
+  </div>
+
+
+  <div class="video_wrapper">
+    <div class="video_container">
+    <video autoplay muted loop controls>
+      <source src="static/videos/Rob_inter/03.mp4" type="video/mp4">
+    </video>
+    </div>
+  </div>
+
+  <div class="video_wrapper">
+    <div class="video_container">
+    <video autoplay muted loop controls>
+      <source src="static/videos/Rob_inter/04.mp4" type="video/mp4">
+    </video>
+    </div>
+  </div>
+
+
+  <div class="video_wrapper">
+    <div class="video_container">
+    <video autoplay muted loop controls>
+      <source src="static/videos/Rob_inter/06.mp4" type="video/mp4">
+    </video>
+    </div>
+  </div>
+
+  <div class="video_wrapper">
+    <div class="video_container">
+    <video autoplay muted loop controls>
+      <source src="static/videos/Rob_inter/07.mp4" type="video/mp4">
+    </video>
+    </div>
+  </div>
+
+  <div class="video_wrapper">
+    <div class="video_container">
+    <video autoplay muted loop controls>
+      <source src="static/videos/Rob_inter/08.mp4" type="video/mp4">
+    </video>
+    </div>
+  </div>
+
+  <div class="video_wrapper">
+    <div class="video_container">
+    <video autoplay muted loop controls>
+      <source src="static/videos/Rob_inter/09.mp4" type="video/mp4">
+    </video>
+    </div>
+  </div>
+
+  <div class="video_wrapper">
+    <div class="video_container">
+    <video autoplay muted loop controls>
+      <source src="static/videos/Rob_inter/10.mp4" type="video/mp4">
+    </video>
+    </div>
+  </div>
+  
+
+  <div class="video_wrapper">
+    <div class="video_container">
+    <video autoplay muted loop controls>
+      <source src="static/videos/Rob_inter/12.mp4" type="video/mp4">
+    </video>
+    </div>
+  </div>
+
+</div>
+
+
+
+  <!-- Image carousel -->
+  <!-- <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item">
+            <img src="static/images/carousel1.jpg" alt="MY ALT TEXT" />
+            <h2 class="subtitle has-text-centered">
+              First image description.
+            </h2>
+          </div>
+          <div class="item">
+            <img src="static/images/carousel2.jpg" alt="MY ALT TEXT" />
+            <h2 class="subtitle has-text-centered">
+              Second image description.
+            </h2>
+          </div>
+          <div class="item">
+            <img src="static/images/carousel3.jpg" alt="MY ALT TEXT" />
+            <h2 class="subtitle has-text-centered">
+              Third image description.
+            </h2>
+          </div>
+          <div class="item">
+            <img src="static/images/carousel4.jpg" alt="MY ALT TEXT" />
+            <h2 class="subtitle has-text-centered">
+              Fourth image description.
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+  <!-- End image carousel -->
+
+
+
+
+  <!-- Youtube video -->
+  <!-- <section class="hero is-small is-light">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title is-3">Video Presentation</h2>
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+
+            <div class="publication-video">
+              <iframe src="https://www.youtube.com/embed/xxxx" frameborder="0" allow="autoplay; encrypted-media"
+                allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+  <!-- End youtube video -->
+
+
+  <!-- Video carousel -->
+  <!-- <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title is-3">Another Carousel</h2>
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item item-video1">
+            <video poster="" id="video1" autoplay controls muted loop height="100%">
+              <source src="static/videos/carousel1.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-video2">
+            <video poster="" id="video2" autoplay controls muted loop height="100%">
+              <source src="static/videos/carousel2.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-video3">
+            <video poster="" id="video3" autoplay controls muted loop height="100%">\
+              <source src="static/videos/carousel3.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+  <!-- End video carousel -->
+
+
+
+  <!-- Paper poster -->
+  <!-- <section class="hero is-small is-light" id="text_supp">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title has-text-centered">Textual Supplementary Material</h2>
+
+        <iframe src="supp.pdf" width="100%" height="1080">
+        </iframe>
+
+      </div>
+    </div>
+  </section> -->
+  <!--End paper poster -->
+
+
+  <!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>
+        @article{chen2025dancetogether,
+          title     = {DanceTogether! Identity-Preserving Multi-Person Interactive Video Generation},
+          author    = {Chen, Junhao and Chen, Mingjin and Xu, Jianjin and Li, Xiang and Dong, Junting and Sun, Mingze and Jiang, Puhua and Li, Hongxiang and Yang, Yuhang and Zhao, Hao and Long, Xiaoxiao and Huang, Ruqi},
+          journal   = {arXiv preprint arXiv:2505.18078},
+          year      = {2025},
+          month     = {May},
+          url       = {https://arxiv.org/abs/2505.18078},
+        }
+      </code></pre>
+    </div>
+  </section>
+  <!--End BibTex citation -->
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+                target="_blank">Academic Project Page Template</a> which was adopted from the <a
+                href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+              You are free to borrow the source code of this website, we just ask that you link back to this page in the
+              footer. <br> This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Statcounter tracking code -->
+
+  <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+  <!-- End of Statcounter Code -->
+
+</body>
+
+</html>
