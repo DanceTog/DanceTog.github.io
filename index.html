@@ -163,6 +163,73 @@
       color: #888;
       margin-top: 0.5rem;
     }
+
+    #video_gallery_2 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      padding: 2rem 3rem;
+      margin: 0 auto;
+      max-width: 1400px;
+      box-sizing: border-box;
+    }
+
+    #motion_transfer_gallery {
+      display: flex;
+      flex-direction: column;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+      box-sizing: border-box;
+    }
+
+    #video_gallery_2 .video_wrapper {
+      margin: 0;
+      width: 100%;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      padding-bottom: 1rem;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+      overflow: hidden;
+    }
+
+    #motion_transfer_gallery .video_wrapper {
+      width: 100%;
+      margin: 0 0 1.25rem 0;
+    }
+
+    #video_gallery_2 video {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      display: block;
+    }
+
+    #motion_transfer_gallery video {
+      width: 100%;
+      height: auto;
+    }
+
+    @media (min-width: 1920px) {
+      #motion_transfer_gallery .video_wrapper {
+        max-width: 1600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    @media (max-width: 768px) {
+      #video_gallery_2 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        padding: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      #video_gallery_2 {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
         
 
@@ -373,6 +440,48 @@
       <br>
     </div>
   </section>
+
+
+
+  <!-- Motion Transfer Cases Section -->
+<section class="section hero is-light" id="motion_transfer_title">
+  <div class="container" style="width: 100vw;">
+    <br>
+    <h2 class="title is-3 has-text-centered">Motion Transfer Cases for Complex Interactive Actions</h2>
+    <p class="has-text-centered">The leftmost is the driving video, with reference images shown above</p>
+    <br>
+  </div>
+</section>
+
+<!-- Motion Transfer Video Gallery -->
+<div class="video_2" id="motion_transfer_gallery" style="width: 100%">
+  <div class="video_wrapper">
+    <div class="video_container">
+      <video autoplay muted loop controls>
+        <source src="static/videos/motion_trans/mt_case1.mp4" type="video/mp4">
+      </video>
+      <p class="has-text-centered">motion transfer case 1</p>
+    </div>
+  </div>
+
+  <div class="video_wrapper">
+    <div class="video_container">
+      <video autoplay muted loop controls>
+        <source src="static/videos/motion_trans/mt_case2.mp4" type="video/mp4">
+      </video>
+      <p class="has-text-centered">motion transfer case 2</p>
+    </div>
+  </div>
+
+  <div class="video_wrapper">
+    <div class="video_container">
+      <video autoplay muted loop controls>
+        <source src="static/videos/motion_trans/mt_case3.mp4" type="video/mp4">
+      </video>
+      <p class="has-text-centered">motion transfer case 3</p>
+    </div>
+  </div>
+</div>
 
   <!-- －－－－－－ Video Gallery 1 －－－－－－ -->
 <div class="video_2" id="video_gallery_1" style="width:100%">
@@ -732,16 +841,15 @@
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>
-        @article{chen2025dancetogether,
-          title     = {DanceTogether! Identity-Preserving Multi-Person Interactive Video Generation},
-          author    = {Chen, Junhao and Chen, Mingjin and Xu, Jianjin and Li, Xiang and Dong, Junting and Sun, Mingze and Jiang, Puhua and Li, Hongxiang and Yang, Yuhang and Zhao, Hao and Long, Xiaoxiao and Huang, Ruqi},
-          journal   = {arXiv preprint arXiv:2505.18078},
-          year      = {2025},
-          month     = {May},
-          url       = {https://arxiv.org/abs/2505.18078},
-        }
-      </code></pre>
+      <pre><code>@article{chen2025dancetogether,
+  title={DanceTogether! Identity-Preserving Multi-Person Interactive Video Generation}, 
+  author={Junhao Chen and Mingjin Chen and Jianjin Xu and Xiang Li and Junting Dong and Mingze Sun and Puhua Jiang and Hongxiang Li and Yuhang Yang and Hao Zhao and Xiaoxiao Long and Ruqi Huang},
+  year={2025},
+  eprint={2505.18078},
+  archivePrefix={arXiv},
+  primaryClass={cs.CV},
+  url={https://arxiv.org/abs/2505.18078}, 
+}</code></pre>
     </div>
   </section>
   <!--End BibTex citation -->
